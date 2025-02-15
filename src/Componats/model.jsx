@@ -10,8 +10,11 @@ const Model = ({ model, setModel }) => {
   } = CartState();
   return (
     <div className=" absolute top-12 right-0  p-5 min-w-3xs bg-white z-10 rounded-lg shadow">
-      <span className=" bg-black absolute top-2 right-2 p-1 rounded-lg cursor-pointer">
-        <RxCross2 className=" text-xl text-white" />
+      <span
+        onClick={() => setModel(false)}
+        className="bg-black absolute top-2 right-2 p-1 rounded-lg cursor-pointer hover:bg-gray-800 transition"
+      >
+        <RxCross2 className="text-xl text-white" />
       </span>
 
       {cart.length > 0 ? (

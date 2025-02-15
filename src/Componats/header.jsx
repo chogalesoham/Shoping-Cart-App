@@ -9,6 +9,7 @@ const Header = () => {
   const [model, setModel] = useState(false);
   const {
     state: { cart },
+    prodcutDispatch,
   } = CartState();
   return (
     <nav className="  bg-amber-50 shadow-lg py-4 px-4">
@@ -17,6 +18,12 @@ const Header = () => {
           <h1 className=" font-bold text-2xl underline">Shopin Cart</h1>
         </Link>
         <input
+          onChange={(e) =>
+            prodcutDispatch({
+              type: "FILTER_BY_SEARCH",
+              payload: e.target.value,
+            })
+          }
           className=" bg-white border border-gray-400 py-2 px-3 min-w-82 rounded-lg"
           type="text"
           placeholder="Search Your Products"
